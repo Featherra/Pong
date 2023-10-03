@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SceneTemplate;
 using UnityEngine;
 
-public class ball : MonoBehaviour
+public class collision : MonoBehaviour
 {
     public float xPosition = 2f;
     public float yPosition = 2f;
@@ -26,6 +25,19 @@ public class ball : MonoBehaviour
         yPosition = yPosition + ySpeed * Time.deltaTime;
         transform.position = new Vector3(xPosition, yPosition, 0f);
 
-
+   }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("OUCH");
+        if(collision.gameObject.CompareTag("horizontalWall"))
+        {
+            Debug.Log("my head man");
+            ySpeed = ySpeed * -1f;
+        } else if (collision.gameObject.CompareTag("verticalWall"))
+        {
+            Debug.Log("Watch it.");
+            xSpeed = xSpeed * -1f;
+        }
     }
+
 }
