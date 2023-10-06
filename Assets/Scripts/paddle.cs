@@ -9,6 +9,8 @@ public class paddle : MonoBehaviour
     public float speed = 3f;
     public string leftOrRight;
     public float maxValue = 3.8f;
+    //find gameobjectText
+    // gameObjectText.text = player1score + player2Score
 
     void paddleControl(KeyCode up, KeyCode down)
     {
@@ -29,10 +31,6 @@ public class paddle : MonoBehaviour
 
   
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
     void Update()
     {
         if (leftOrRight == "left")
