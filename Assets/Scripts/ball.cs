@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.SceneTemplate;
 using UnityEngine;
+using TMPro;
 
 public class ball : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class ball : MonoBehaviour
     public float yPosition = 2f;
     public float xSpeed = 1f;
     public float ySpeed = 1f;
+    public TMP_Text scoreText;
 
 
     // Start is called before the first frame update

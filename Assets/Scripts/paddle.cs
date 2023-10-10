@@ -17,12 +17,10 @@ public class paddle : MonoBehaviour
         if (Input.GetKey(up) && transform.position.y < maxValue)
         {
 
-            Debug.Log("hi W");
             transform.Translate(Vector3.up * speed * Time.deltaTime);
         }
         else if (Input.GetKey(down) && transform.position.y > -maxValue)
         {
-            Debug.Log("hi S");
             transform.Translate(Vector3.down * speed * Time.deltaTime);
         }
        
