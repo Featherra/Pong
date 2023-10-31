@@ -24,7 +24,8 @@ public class BotPaddle : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("HorizontalWall"))
+        
+        if (collision.gameObject.CompareTag("horizontalWall"))
         {
             ySpeed = ySpeed * -1f;
         }

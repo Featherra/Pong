@@ -7,6 +7,6 @@ public class PlayButtonBot : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("BotPaddle");
+        SceneManager.LoadScene("Bot");
     }
 }
