@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayButton : MonoBehaviour
 {
 
-    public void PlayGame ()
+    public void PlayGame ()  // if u press the 2 players button it gets send to the collision scene
     {
         SceneManager.LoadScene("collision");
     }

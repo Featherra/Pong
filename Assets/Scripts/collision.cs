@@ -14,13 +14,13 @@ public class collision : MonoBehaviour
     public int rightScore = 0;
     public int winScore = 5;
 
-    void resetBall()
+    void resetBall()   // position of the ball
     {
         xPosition = 0f;
-        yPosition = Random.Range(-4f, 4f);
+        yPosition = Random.Range(-4f, 4f);   // if the ball hits a side it resets to a random position
         xSpeed = xSpeed * 1f;
     }
-    // Start is called before the first frame update
+    
     void Start()
     {
         transform.position = new Vector3(xPosition, yPosition, 0f);
@@ -36,35 +36,35 @@ public class collision : MonoBehaviour
         transform.position = new Vector3(xPosition, yPosition, 0f);
         if (leftScore >= 5)
         {
-            scoreText.text = "Left player has won!";
+            scoreText.text = "Left player has won!"; // after the left person has scored 5 points this is shown
             xPosition = 0f;
-            yPosition = 0f;
+            yPosition = 0f;  //position of the ball = in the middle
         } else if (rightScore >= 5)
         {
-            scoreText.text = "Right player has won!";
-            xPosition = 0f;
+            scoreText.text = "Right player has won!";  // after the right person has scored 5 points this is shown
+            xPosition = 0f;   //position of the ball = in the middle
             yPosition = 0f;
         }
    }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)  //what happens when the ball hits the wall
     {
-        if(collision.gameObject.CompareTag("horizontalWall"))
+        if(collision.gameObject.CompareTag("horizontalWall")) 
         {
             ySpeed = ySpeed * -1f;
         } else if (collision.gameObject.CompareTag("verticalWall"))
         {
             xSpeed = xSpeed * -1f;
         }
-        else if (collision.gameObject.CompareTag("verticalL"))
+        else if (collision.gameObject.CompareTag("verticalL")) // if u hit the left wall the right person gets a point
         {
             resetBall();
-            rightScore++;
+            rightScore++; // this adds a point to the score text for the left person
             scoreText.text = leftScore + " - " + rightScore;
         }
-        else if (collision.gameObject.CompareTag("verticalR"))
+        else if (collision.gameObject.CompareTag("verticalR")) //if u hit the right wall the left person gets a point
         {
-            resetBall();
-            leftScore++;
+            resetBall(); 
+            leftScore++;  // this adds a point to the score text for the right person
             scoreText.text = leftScore + " - " + rightScore;
         }
         else if (collision.gameObject.CompareTag("Player"))

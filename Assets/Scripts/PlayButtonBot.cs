@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayButtonBot : MonoBehaviour
 {
-    public void PlayGame()
+    public void PlayGame() //if u press the 1 player button it gets send to the bot scene
     {
         SceneManager.LoadScene("Bot");
     }

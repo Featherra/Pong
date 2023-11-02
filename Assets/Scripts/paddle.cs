@@ -31,11 +31,11 @@ public class paddle : MonoBehaviour
     // Start is called before the first frame update
     void Update()
     {
-        if (leftOrRight == "left")
+        if (leftOrRight == "left") // the left paddle is controlled by W & S
         {
             paddleControl(KeyCode.W, KeyCode.S);
         }
-        else if (leftOrRight == "right")
+        else if (leftOrRight == "right") // The right paddle is controlled by the Up and Down arrow
         {
             paddleControl(KeyCode.UpArrow, KeyCode.DownArrow);
         }

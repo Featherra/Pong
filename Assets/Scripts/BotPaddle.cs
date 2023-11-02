@@ -25,7 +25,7 @@ public class BotPaddle : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
-        if (collision.gameObject.CompareTag("horizontalWall"))
+        if (collision.gameObject.CompareTag("horizontalWall")) //if the padle hits the horizantal wall it bounces back up
         {
             ySpeed = ySpeed * -1f;
         }

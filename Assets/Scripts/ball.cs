@@ -23,9 +23,9 @@ public class ball : MonoBehaviour
     void Update()
     {
 
-        xPosition = xPosition + xSpeed * Time.deltaTime;
+        xPosition = xPosition + xSpeed * Time.deltaTime; // this is the x position of the ball
         //xposition += xSpeed * Time.deltaTime; shorter way to do the same thing
-        yPosition = yPosition + ySpeed * Time.deltaTime;
+        yPosition = yPosition + ySpeed * Time.deltaTime; //this is the y position of the ball
         transform.position = new Vector3(xPosition, yPosition, 0f);
 
 
